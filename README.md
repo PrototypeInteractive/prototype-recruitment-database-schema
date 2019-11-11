@@ -65,7 +65,7 @@ Database consists of 7 collections and their respective fields:
   - `homeworld` - number (references `planets` collection)
   - `language` - string
   - `name` - string
-  - `people` - an array of numbers
+  - `people` - an array of numbers (references `people` collection)
   - `skin_colors` - string
 
 
