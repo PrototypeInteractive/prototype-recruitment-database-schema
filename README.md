@@ -1,16 +1,16 @@
 # Recruitment Test Exercise
 
 ## Overview
-This repository contains the MongoDB schema for the recruitment test excercise.
+This repository contains the SQL Server schema for the recruitment test excercise.
 
 ## Schema
-Database consists of 7 collections and their respective fields:
+Database consists of tables and their respective fields:
 - `films`
   - `id` - number
   - `characters` - an array of numbers (references `people` collection)
-  - `created` - string
+  - `created` - datetime
   - `director` - string
-  - `edited` - string
+  - `edited` - datetime
   - `episode_id` - number
   - `opening_crawl` - string
   - `planets` - an array of numbers (references `planets` collection)
@@ -25,8 +25,8 @@ Database consists of 7 collections and their respective fields:
 - `people`
   - `id` - number
   - `birth_year` - string
-  - `created` - string
-  - `edited` - string
+  - `created` - datetime
+  - `edited` - datetime
   - `eye_color` - string
   - `gender` - string
   - `hair_color` - string
@@ -40,9 +40,9 @@ Database consists of 7 collections and their respective fields:
 - `planets`
   - `id` - number
   - `climate` - string
-  - `created` - string
+  - `created` - datetime
   - `diameter` - string
-  - `edited` - string
+  - `edited` - datetime
   - `gravity` - string
   - `name` - string
   - `orbital_period` - string
@@ -57,9 +57,9 @@ Database consists of 7 collections and their respective fields:
   - `average_height` - string
   - `average_lifespan` - string
   - `classification` - string
-  - `created` - string
+  - `created` - datetime
   - `designation` - string
-  - `edited` - string
+  - `edited` - datetime
   - `eye_colors` - string
   - `hair_colors` - string
   - `homeworld` - number (references `planets` collection)
@@ -82,9 +82,9 @@ Database consists of 7 collections and their respective fields:
   - `cargo_capacity` - string
   - `consumables` - string
   - `cost_in_credits` - string
-  - `created` - string
+  - `created` - datetime
   - `crew` - string
-  - `edited` - string
+  - `edited` - datetime
   - `length` - string
   - `manufacturer` - string
   - `max_atmospering_speed` - string
@@ -97,3 +97,37 @@ Database consists of 7 collections and their respective fields:
   - `id` - number
   - `pilots` - an array of numbers (references `people` collection)
   - `vehicle_class` - string
+
+
+- `films_characters`
+  - `film_id` - number (reference to `films` table)
+  - `people_id` - number (reference to `person` table)
+
+- `films_planets`
+  - `film_id` - number (reference to `films` table)
+  - `planet_id` - number (reference to `planets` table)
+
+- `films_species`
+  - `film_id` - number (reference to `films` table)
+  - `species_id` - number (reference to `species` table)
+
+- `films_starships`
+  - `film_id` - number (reference to `films` table)
+  - `starship_id` - number (reference to `startship` table)
+
+- `films_vehicles`
+  - `film_id` - number (reference to `films` table)
+  - `vehicle_id` - number (reference to `vehicles` table)
+
+- `species_people`
+  - `species_id` - number (reference to `species` table)
+  - `people_id` - number (reference to `people` table)
+
+- `starships_pilots`
+  - `starship_id` - number (reference to `starships` table)
+  - `people_id` - number (reference to `people` table)
+
+- `vehicles_pilots`
+  - `vehicle_id` - number (reference to `vehicles` table)
+  - `people_id` - number (reference to `people` table)
+
