@@ -4,22 +4,17 @@
 This repository contains the SQL Server schema for the recruitment test excercise.
 
 ## Schema
-Database consists of tables and their respective fields:
+Database tables and their respective fields:
 - `films`
   - `id` - number
-  - `characters` - an array of numbers (references `people` collection)
   - `created` - datetime
   - `director` - string
   - `edited` - datetime
   - `episode_id` - number
   - `opening_crawl` - string
-  - `planets` - an array of numbers (references `planets` collection)
   - `producer` - string
   - `release_date` - string
-  - `species` - an array of numbers (references `species` collection)
-  - `starships` - an array of numbers (references `starships` collection)
   - `title` - string
-  - `vehicles` - an array of numbers (references `vehicles` collection)
 
 
 - `people`
@@ -31,7 +26,7 @@ Database consists of tables and their respective fields:
   - `gender` - string
   - `hair_color` - string
   - `height` - string
-  - `homeworld` - number (references `planets` collection)
+  - `homeworld` - string
   - `mass` - string
   - `name` - string
   - `skin_color` - string
@@ -62,10 +57,9 @@ Database consists of tables and their respective fields:
   - `edited` - datetime
   - `eye_colors` - string
   - `hair_colors` - string
-  - `homeworld` - number (references `planets` collection)
+  - `homeworld` - string
   - `language` - string
   - `name` - string
-  - `people` - an array of numbers (references `people` collection)
   - `skin_colors` - string
 
 
@@ -73,7 +67,6 @@ Database consists of tables and their respective fields:
   - `id` - number
   - `MGLT` - string
   - `hyperdrive_rating` - string
-  - `pilots` - an array of numbers (references `people` collection)
   - `starship_class` - string
 
 
@@ -95,7 +88,6 @@ Database consists of tables and their respective fields:
 
 - `vehicles`
   - `id` - number
-  - `pilots` - an array of numbers (references `people` collection)
   - `vehicle_class` - string
 
 
